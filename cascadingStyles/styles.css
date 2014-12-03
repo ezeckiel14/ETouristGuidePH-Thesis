@@ -1,0 +1,50 @@
+/*Cascading Stylesheets
+ Author: Dejaresco, John Carlo.
+ Email: johncarlo_dejaresco@yahoo.com
+ Created: 11-9-2014
+ Description:Thesis CSS*/
+
+#MainContent{
+	width:100%;
+}
+
+#header{
+	text-decoration:underline;
+	text-align:center;
+}
+
+#content{
+
+}
+
+#navigator{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.userPane{
+	width:26%;
+	margin: 0 auto;
+}
+
+#footer{
+	text-align:center;
+	clear:both;
+}
+
+#searchConsole{
+	width:30%;
+	float:left;
+}
+
+#searchConsole img {
+	border: 1px solid #000000;
+}
+#map-canvas {
+	width:69%;
+	height:450px;
+	border: 1px solid #000000;
+	float:right;
+}
+
+.reds p {display:inline;}
