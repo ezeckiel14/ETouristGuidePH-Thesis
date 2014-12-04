@@ -25,9 +25,9 @@ if(isset($_GET['email'])&& !empty($_GET['email']) && isset($_GET['hash']) && !em
 	if ($row_cnt > 0){
 		$query2 = "UPDATE users SET isValidated = '".$turnTrue."' WHERE email = '".$email."' AND validationHash = '" .$validationHash."'";
 		mysqli_query($link,$query2);
-		echo "<div class=\"userPane\">".$username.", your account is now validated </br><a href=\"./index.php\">Return to log-in</a></div>";
+		echo "<div class=\"userPane\">".$email.", your account is now validated </br><a href=\"./index.php\">Return to log-in</a></div>";
 	}else{
-		echo "<div class=\"userPane\">".$username. ", your account is already validated </br><a href=\"./index.php\">Return to log-in</a></div>";
+		echo "<div class=\"userPane\">".$email. ", your account is already validated </br><a href=\"./index.php\">Return to log-in</a></div>";
 	}	
 }else{
 	echo "Use the link found in your email to validate it.";

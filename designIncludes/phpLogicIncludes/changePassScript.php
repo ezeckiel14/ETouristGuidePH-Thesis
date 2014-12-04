@@ -50,7 +50,7 @@ if(empty($newPass) || empty($confirmPass)){
 	$subject = "Change Password to our E-tourist Guide using GIS Technology PH Web-App";
 	//Message content
 	$message = "Hello " .$username.  "\n\n";
-	$message .= "You have requested for a change password. You new is now set.\n";
+	$message .= "You have requested for a change password. You new password is now set.\n";
 	$message .= "----------------------------------------------" . PHP_EOL;
 	$message .= "Username: " .$username. PHP_EOL;
 	$message .= "Password: " .$newPass. PHP_EOL;
