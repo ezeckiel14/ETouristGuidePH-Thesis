@@ -17,17 +17,19 @@ $username = mysqli_real_escape_string($connect, $username);
 $password = mysqli_real_escape_string($connect, $password);
 
 #make a query to match to start a session
-$query = "SELECT username,password,isValidated FROM users WHERE username = '".$username."'";
+$query = "SELECT username,password,firstname,lastname,isValidated FROM users WHERE username = '".$username."'";
 $result = mysqli_query($connect,$query);	
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $hashPass = $row['password'];
+$firstname = $row['firstname'];
+$lastname = $row['lastname'];
 $isValidated = $row['isValidated'];
 $row_cnt = mysqli_num_rows($result);
 mysqli_free_result($result);
 #if query match then start session if not then output login failed
 if($row_cnt == 1 && password_verify($password,$hashPass) && $isValidated == 1){
 	session_start();
-	$_SESSION['username'] = $username;
+	$_SESSION['username'] = $firstname . ' '. $lastname;
 	header('Location: index.php');
 	echo "login succesful";
 }else if ($row_cnt == 1 && password_verify($password,$hashPass) && $isValidated == 0){
