@@ -12,6 +12,4 @@
 	</form>
 </div>
 
-<div id="map-canvas">
-	
-</div>
+<div id="map-canvas"></div>
