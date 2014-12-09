@@ -7,8 +7,8 @@
 	<p>Mode of Transportation: <input type="radio" name="transpo" checked="1" value="onFoot">On-foot
 							   <input type="radio" name="transpo" value="onVehicle">On-vehicle
 	</p>
-	<input type="submit" value="Calculate" name="calculate" onclick="calculateDistance()";>
-	<input type="submit" value="Save Query Data" name="save">
+	<input type="button" value="Calculate" name="calculate" onclick="calculateDistance()";>
+	<input type="button" value="Save Query Data" name="save">
 	</form>
 	
 	<div id="myLatLng"></div>

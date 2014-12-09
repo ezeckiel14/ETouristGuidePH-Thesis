@@ -64,5 +64,6 @@ window.onload = captureMyLocation(),printLoc();
 
 //Function for calculateDistance();
 function calculateDistance(){
-	window.alert('Hello World			');
+	var time = document.getElementById('time');
+	var speed = parseFloat(29);
 }
