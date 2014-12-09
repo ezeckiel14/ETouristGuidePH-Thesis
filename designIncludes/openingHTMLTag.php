@@ -24,8 +24,10 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=en-US&region=PH&v=3&key=AIzaSyC99xGtITx9-SQWK9qJwI7mufvo49MSXqY&signed_in=true"></script>
 		<script src="./jscripts/jquery-ui.min.js"></script>
 		<script src="./jscripts/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="jscripts/mapScripts/mapScript.js"></script>
+		<script type="text/javascript" src="jscripts/mapScripts/mapScript.js"></script>	
 		<?php session_start(); ?>
 	</head>
 
 	<body>
+		
+		
