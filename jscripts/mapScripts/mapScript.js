@@ -14,14 +14,31 @@ function showMap(position) {
 	//set option object of the map. This will determine the zoom value, type of map to use, and the center of the map
 	var mapOptions ={
 		center: latlng,
-		zoom: 15,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		zoom: 18,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		scaleControl: true,
+	//	noClear: true,
 	// 	navigationControl: true,
 	//	disableDefaultUI: true,
 	//	mapTypeControl: true,
 	};
 	//initialize the map by putting the google maps object on the map-canvas div
 	var map = new google.maps.Map(mapDiv, mapOptions);
+	//adding markers on the map
+	var marker = new google.maps.Marker({
+		position:latlng,
+		map: map,
+		title:'Your Current Position'
+	});
+	//add infoWindow to the marker
+	var infowindow = new google.maps.InfoWindow({
+		content:'You are currently here.'
+	});
+	//show the info window
+	infowindow.open(map,marker);
+	//Print Latitude and Longitude on the myLatLng div
+	var myLatLng = document.getElementById('myLatLng');
+	myLatLng.innerHTML = "<p><u>Your current position: </u></br> Latitude: " + position.coords.latitude + " </br> longitude: " + position.coords.longitude + "</p>"; 
 };
 //A function for setting up geolocation
 function captureMyLocation(){
@@ -39,9 +56,13 @@ function captureMyLocation(){
 	}else{
 		//if browser doesn't support geolocation or has a version that doesn't support geolocation API then output the following values
 		document.getElementById('map-canvas').innerHTML += "Your browser doesn't support the Geolocation API";
-	}
-	
+	}	
 };
 //Start the map after the page has loaded.
-window.onload = captureMyLocation();
+window.onload = captureMyLocation(),printLoc();
 })();
+
+//Function for calculateDistance();
+function calculateDistance(){
+	window.alert('Hello World			');
+}
