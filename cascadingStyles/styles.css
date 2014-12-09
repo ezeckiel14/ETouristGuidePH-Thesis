@@ -30,6 +30,7 @@
 #footer{
 	text-align:center;
 	clear:both;
+	margin-top:0.625em;
 }
 
 #searchConsole{
@@ -38,13 +39,14 @@
 }
 
 #searchConsole img {
-	border: 1px solid #000000;
+	border: 0.063em solid #000000;
 }
 #map-canvas {
 	width:69%;
-	height:450px;
-	border: 1px solid #000000;
+	height:28.125em;
+	border: 0.063em solid #000000;
 	float:right;
+	margin-bottom:0.625em;
 }
 
 .reds p {display:inline;}
