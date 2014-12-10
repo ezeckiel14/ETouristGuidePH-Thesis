@@ -32,7 +32,7 @@ function showMap(position) {
 	});
 	//add infoWindow to the marker
 	var infowindow = new google.maps.InfoWindow({
-		content:'You are currently here.'
+		content:'You are currently somewhere .'
 	});
 	//show the info window
 	infowindow.open(map,marker);
@@ -59,11 +59,38 @@ function captureMyLocation(){
 	}	
 };
 //Start the map after the page has loaded.
-window.onload = captureMyLocation(),printLoc();
+window.onload = captureMyLocation();
 })();
 
 //Function for calculateDistance();
 function calculateDistance(){
+	//Assign the value of the form in a variable
+	//Get time
 	var time = document.getElementById('time');
-	var speed = parseFloat(29);
-}
+	//Get budget
+	var budget = document.getElementById('budget');
+	//Get mode of transpo
+	var transpo = document.getElementsByName('transpo');
+	//loop through the radio buttons to select whic is selected
+	var myTranspo;
+	for(i = 0; i < transpo.length; i++){
+		myTranspo = transpo[i];
+		
+		if(myTranspo.checked){
+			var modeTranspo = myTranspo.value;
+			alert(modeTranspo);
+		}
+	}
+	var speed = parseFloat(29); //assuming that the speed of the vehicle is 29kph and assuming that the selected radio is on-vehicle
+	//var.domElement Value gets the value of the form id)
+	if(!parseFloat(time.value)){
+		window.alert('Available time should be in numerical values');
+	}else if(!parseFloat(budget.value)){
+		window.alert('Available budget should be in numerical values');
+	}else{
+		var distanceCovered = document.getElementById('distanceCovered');
+		var distance = time.value*speed;//According to physics the formula of Speed = Distance / Time, swapping distance with speed will give us Distance = Speed * Time
+		distanceCovered.innerHTML = "The distance computed for the given time and mode of transportation is: </br>" + distance + " Km";
+		}
+	
+};
